@@ -1,59 +1,52 @@
-:root{
-    --font-mono: ui-monospace, Menlo,Monaco,'Cascadia Mono', 'segoe UI Mono',
-    'Roboto Mono','Oxygen Mono','Ubuntu Monospace','source code pro',
-    'fira Mono','droid Sans Mono','Courier New',--Monospace,
-    --transition: all 0.1s cubic-bezier(0.645,0.355,1)
+:root {
+    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+        'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    --transition: all 0.1s cubic-bezier(0.645, 0.355, 1);
 }
 
-
-body{
-height: auto;
-    /* Permite que el contenido determine la altura */
+body {
+    height: auto;
     min-height: 100vh;
-    /* Garantiza que al menos ocupe la pantalla */
     overflow-y: auto;
-    /* Habilita el desplazamiento vertical */
     margin: 0;
-    /* Evita márgenes que puedan afectar el scroll */
     padding: 0;
-    
+    font-family: var(--font-mono);
+    scroll-behavior: smooth;
 }
-section{
 
-
+section {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 1em
-
+    padding: 1em;
 }
-section h1{
-    font: 3em;
 
+section h1 {
+    font-size: 3em;
+    text-align: center;
 }
-section h2{
+
+section h2 {
     text-align: center;
     width: 100%;
     margin-bottom: 1em;
     font-size: 2.5em;
-
 }
-section frm{
+
+section form {
     padding: 1.5em;
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
     border-radius: 20px;
     border: 2px solid red;
-
-
 }
-section form input{
-    
+
+section form input {
     width: 100%;
     margin-bottom: 1em;
     padding: 0.8em;
@@ -63,43 +56,68 @@ section form input{
     color: beige;
     font-family: var(--font-mono);
     transition: var(--transition);
-
+    font-size: 1em;
+    border-radius: 5px;
 }
-section form imput[type='submit']:active{
-    transform:ecale(0.97);
 
+section form input[type='submit']:active {
+    transform: scale(0.97);
 }
-section p{
-    margin-top:1.5em;
 
+section p {
+    margin-top: 1.5em;
+    text-align: center;
 }
-section p a{
+
+section p a {
     text-decoration: none;
     color: blue;
 }
-section button{
-    background-color: blue;
-     font-family: var(--font-mono);
-     transition: var(--transition);
-     border:none;
-     padding: 0.5em 1em;
-     border-radius: 9px;
-     margin-top: 1.5em;
-     font-size: 1em;
 
+section button {
+    background-color: blue;
+    font-family: var(--font-mono);
+    transition: var(--transition);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 9px;
+    margin-top: 1.5em;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
 }
+
+section button:hover {
+    background-color: darkblue;
+}
+
 video {
     display: flex;
-    /* Alinea los videos en fila */
     justify-content: center;
-    /* Centra los videos en la pantalla */
     gap: 10px;
-    /* Espaciado entre videos */
+    width: 30%;
+    max-width: 300px;
 }
 
-video {
-    width: 30%;
-    /* Ajusta el tamaño de los videos */
-    max-width: 300px;
-    /* Máximo ancho */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 2em;
+    }
+
+    section h1 {
+        font-size: 2.5em;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    section form {
+        max-width: 90%;
+    }
+
+    video {
+        width: 90%;
+        max-width: none;
+    }
 }
