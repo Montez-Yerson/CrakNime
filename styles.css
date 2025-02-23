@@ -7,7 +7,16 @@
 
 
 body{
-    font: var(--font-mono);
+height: auto;
+    /* Permite que el contenido determine la altura */
+    min-height: 100vh;
+    /* Garantiza que al menos ocupe la pantalla */
+    overflow-y: auto;
+    /* Habilita el desplazamiento vertical */
+    margin: 0;
+    /* Evita márgenes que puedan afectar el scroll */
+    padding: 0;
+    
 }
 section{
 
@@ -15,6 +24,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
