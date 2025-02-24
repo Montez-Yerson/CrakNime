@@ -234,3 +234,91 @@ footer {
 .cont li a img:hover {
     transform: scale(1.2);
 }
+@media screen and (max-width: 768px) {
+
+    /* Ajustar la estructura principal */
+    .contenedor {
+        padding: 10px;
+    }
+
+    /* Ajustar el video de fondo */
+    .video-container video {
+        width: 100%;
+        /* Ocupar todo el ancho */
+        height: auto;
+    }
+
+    /* Ajustar el menú de navegación */
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .menu a {
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Ajustar la barra de búsqueda */
+    .search {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search input[type="text"] {
+        width: 90%;
+        margin-bottom: 5px;
+    }
+
+    .search button {
+        width: 90%;
+    }
+
+    /* Ajustar la galería */
+    .galeryyy {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    /* Ajustar las redes sociales */
+    .redes,
+    .recomendados {
+        width: 100%;
+    }
+
+    .redes li,
+    .recomendados li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Ajustar botones */
+    .btn1,
+    .btn2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Ajustar el footer */
+    footer {
+        padding: 15px;
+    }
+
+    .copy {
+        height: auto;
+        line-height: normal;
+        padding: 10px;
+    }
+
+    .cont {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
