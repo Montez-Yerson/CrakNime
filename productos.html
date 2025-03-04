@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas de Anime</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Películas de Anime</h1>
+    <div class="container" id="anime-container"></div>
+
+    <script>
+        async function getAnimeMovies() {
+            try {
+                const response = await fetch("https://api.jikan.moe/v4/anime?q=movie&type=movie");
+                const data = await response.json();
+                const movies = data.data.slice(0, 100); // Obtener solo 10 películas
+
+                const container = document.getElementById("anime-container");
+                container.innerHTML = ""; // Limpiar el contenedor
+
+                movies.forEach(movie => {
+                    const movieCard = document.createElement("div");
+                    movieCard.classList.add("card");
+                    movieCard.innerHTML = `
+                        <img src="${movie.images.jpg.image_url}" alt="${movie.title}">
+                        <h3>${movie.title}</h3>
+                        <p>${movie.year || "Año desconocido"}</p>
+                    `;
+                    container.appendChild(movieCard);
+                });
+            } catch (error) {
+                console.error("Error al obtener datos:", error);
+            }
+        }
+
+        getAnimeMovies();
+    </script>
+</body>
+</html>
+
+
+
